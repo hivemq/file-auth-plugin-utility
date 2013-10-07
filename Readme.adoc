@@ -1,0 +1,16 @@
+= File Authentication Plugin Utility
+
+== Build jar file
+
+* +mvn package+
+* Done! Jar file can be found in target folder.
+
+== Usage
+
+. Make sure the fileAuthConfiguration.properties have your desired settings
+. Remove the provided credentials.properties
+. Start utility with: +java -jar file-authentication-plugin-utility-1.1.jar+
+. Configure the utility with: +configure --file path/to/fileAuthConfiguration.properties+
+. Create as many user as you need with: +addUser --username <USERNAME> --password <PASSWORD>+
+. Show all user: +listUsers+
+. Done!
