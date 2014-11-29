@@ -37,7 +37,7 @@ public class UtilityHistoryProvider extends DefaultHistoryFileNameProvider {
     }
 
     @Override
-    public String name() {
+    public String getProviderName() {
         return "HiveMQ File Authentication Plugin History Log Provider";
     }
 }

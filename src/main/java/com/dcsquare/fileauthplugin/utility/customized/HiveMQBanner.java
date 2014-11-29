@@ -73,7 +73,7 @@ public class HiveMQBanner extends DefaultBannerProvider implements CommandMarker
     }
 
     @Override
-    public String name() {
+    public String getProviderName() {
         return "HiveMQ FileAuth Plugin Shell";
     }
 }

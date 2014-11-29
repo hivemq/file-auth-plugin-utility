@@ -38,7 +38,8 @@ public class UtilityPromptProvider extends DefaultPromptProvider {
     }
 
     @Override
-    public String name() {
+    public String getProviderName() {
         return "HiveMQ File Authentication Plugin Prompt Provider";
     }
+
 }
