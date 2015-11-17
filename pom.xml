@@ -124,7 +124,12 @@
         <repository>
             <id>spring-release</id>
             <name>Spring Maven RELEASE Repository</name>
-            <url>http://repo.springframework.org/release</url>
+            <url>https://repo.spring.io/release</url>
+        </repository>
+        <repository>
+            <id>com.springsource.repository.bundles.external</id>
+            <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+            <url>https://repo.spring.io/ext-release-local</url>
         </repository>
     </repositories>
 
