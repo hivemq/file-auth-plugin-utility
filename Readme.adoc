@@ -8,9 +8,12 @@
 == Usage
 
 . Make sure the fileAuthConfiguration.properties have your desired settings
+.
 . Remove the provided credentials.properties
-. Start utility with: +java -jar file-authentication-plugin-utility-1.1.jar+
+. Start utility on a Linux or OS/X based system with: +java -jar file-authentication-plugin-utility-1.1.jar+
 . Configure the utility with: +configure --file path/to/fileAuthConfiguration.properties+
 . Create as many user as you need with: +addUser --username <USERNAME> --password <PASSWORD>+
 . Show all user: +listUsers+
 . Done!
+
+CAUTION: The utility does not support Windows. `credentials.properties` file must be created on Linux or OS/X
