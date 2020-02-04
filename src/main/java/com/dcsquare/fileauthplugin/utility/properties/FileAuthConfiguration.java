@@ -24,7 +24,9 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.logging.Logger;
+
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class serves as a wrapper of the configuration.
@@ -32,6 +34,8 @@ import java.util.logging.Logger;
  * @author Christian Goetz
  */
 public class FileAuthConfiguration {
+
+    private static final Logger LOGGER = LogManager.getLogger();
 
     private boolean isHashed;
     private boolean isSalted;
@@ -41,8 +45,6 @@ public class FileAuthConfiguration {
     private int iterations;
     private String credentialFileName;
     private PropertiesConfiguration propertiesConfiguration;
-
-    static final Logger LOG = Logger.getLogger(FileAuthConfiguration.class.getName());
 
     public FileAuthConfiguration(String configFileName) throws IOException, ConfigurationException {
         init(configFileName);
@@ -69,7 +71,7 @@ public class FileAuthConfiguration {
 
         if (!credentialFile.exists()) {
             credentialFile.createNewFile();
-            LOG.warning("Credential file not found, new one created in " + credentialFile.getAbsolutePath());
+            LOGGER.warn("Credential file not found, new one created in " + credentialFile.getAbsolutePath());
         }
 
         isHashed = propertiesConfiguration.getBoolean("passwordHashing.enabled", true);
