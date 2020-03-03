@@ -20,11 +20,12 @@ package com.dcsquare.fileauthplugin.utility.properties;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.logging.Logger;
 
 /**
  * This class serves as a wrapper of the configuration.
@@ -42,7 +43,7 @@ public class FileAuthConfiguration {
     private String credentialFileName;
     private PropertiesConfiguration propertiesConfiguration;
 
-    static final Logger LOG = Logger.getLogger(FileAuthConfiguration.class.getName());
+    static final Logger LOG = LoggerFactory.getLogger(FileAuthConfiguration.class);
 
     public FileAuthConfiguration(String configFileName) throws IOException, ConfigurationException {
         init(configFileName);
@@ -69,7 +70,7 @@ public class FileAuthConfiguration {
 
         if (!credentialFile.exists()) {
             credentialFile.createNewFile();
-            LOG.warning("Credential file not found, new one created in " + credentialFile.getAbsolutePath());
+            LOG.warn("Credential file not found, new one created in " + credentialFile.getAbsolutePath());
         }
 
         isHashed = propertiesConfiguration.getBoolean("passwordHashing.enabled", true);
@@ -107,6 +108,5 @@ public class FileAuthConfiguration {
     public String getSeparationChar() {
         return separationChar;
     }
-
 
 }
