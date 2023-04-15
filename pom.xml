@@ -11,7 +11,7 @@
 
     <properties>
         <jar.mainclass>org.springframework.shell.Bootstrap</jar.mainclass>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.2.9</logback.version>
         <slf4j.version>1.7.30</slf4j.version>
     </properties>
 
